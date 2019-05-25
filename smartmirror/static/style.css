@@ -2,11 +2,11 @@ body {
   font-family: "Fira Sans", sans-serif;
   color: white;
   background-color: black;
-  font-size: 24px;
+  font-size: 48px;
 }
 
 #clock {
-  font-size: 4rem;
+  font-size: 2rem;
   padding: 1rem;
   grid-column-start: 2;
   grid-column-end: 2;
@@ -17,7 +17,7 @@ body {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 2rem;
   margin: 0;
 }
 
