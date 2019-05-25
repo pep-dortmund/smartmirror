@@ -1,0 +1,5 @@
+# $HOME/.config/lxsession/LXDE-pi/autostart
+@xset s off
+@xset -dpms
+@xset s noblank
+@unclutter
