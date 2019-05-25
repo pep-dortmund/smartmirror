@@ -18,25 +18,25 @@
         <h1>PeP et al. e.&thinsp;V.</h1>
       </div>
       <div id="clock">(( time ))</div>
-      <div id="departures">
-        <table>
-          <thead>
-            <tr>
-              <th>Abfahrt</th>
-              <th>Bus/Zug</th>
-              <th>Richtung</th>
-            </tr>
-          </thead>
-          <tr v-for="departure in departures">
-            <td>
-              (( departure.timestamp.format('HH:mm') ))
-              <span v-if="departure.delay > 0">(+((departure.delay)))</span>
-            </td>
-            <td>(( departure.name ))</td>
-            <td>(( departure.to ))</td>
+    </div>
+    <div id="departures">
+      <table>
+        <thead>
+          <tr>
+            <th>Abfahrt</th>
+            <th>Bus/Zug</th>
+            <th>Richtung</th>
           </tr>
-        </table>
-      </div>
+        </thead>
+        <tr v-for="departure in departures">
+          <td>
+            (( departure.timestamp.format('HH:mm') ))
+            <span v-if="departure.delay > 0">(+((departure.delay)))</span>
+          </td>
+          <td>(( departure.name ))</td>
+          <td>(( departure.to ))</td>
+        </tr>
+      </table>
     </div>
   </body>
 
