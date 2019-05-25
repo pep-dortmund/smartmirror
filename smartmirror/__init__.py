@@ -1,9 +1,15 @@
 from flask import Flask, render_template, jsonify
 from openvrr import get_station_departures
+import os
+from dotenv import load_dotenv
+import requests
 
+load_dotenv()
+
+OPENWEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather'
 
 app = Flask(__name__)
-
+app.config['OPENWEATHER_APPID'] = os.environ['OPENWEATHER_APPID']
 
 @app.route('/')
 def index():
@@ -28,3 +34,15 @@ def vrr():
     ]
 
     return jsonify(status='success', departures=departures)
+
+@app.route('/weather/<city>')
+def weather(city):
+    weather = requests.get(
+        OPENWEATHER_URL,
+            params=dict(
+            q=city,
+            units='metric',
+            appid=app.config['OPENWEATHER_APPID'],
+        )
+    )
+    return jsonify(status='succes', weather=weather.json())

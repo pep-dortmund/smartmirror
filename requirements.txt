@@ -1,3 +1,5 @@
 flask
 https://github.com/maxnoe/pyopenvrr/archive/master.tar.gz
 gunicorn
+dotenv
+requests
