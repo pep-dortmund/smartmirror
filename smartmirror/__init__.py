@@ -17,7 +17,7 @@ def vrr():
 
     departures = [
         {
-            'timestamp': dep.get('realDateTime', dep['dateTime']).isoformat(),
+            'timestamp': dep['dateTime'].isoformat(),
             'to': dep['servingLine']['direction'],
             'from': dep['servingLine']['directionFrom'],
             'type': dep['servingLine']['name'],
