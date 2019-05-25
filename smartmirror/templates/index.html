@@ -39,6 +39,18 @@
           </tr>
         </table>
       </div>
+      <table>
+        <tr>
+          <th>Stadt</th>
+          <th>Temperatur</th>
+          <th>Wetter</th>
+        </tr>
+        <tr v-for="(w, city, index) in weather">
+          <td>((city))</td>
+          <td>(( w.temperature)) °C</td>
+          <td><img v-bind:src="w.icon"></td>
+        </tr>
+      </table>
     </div>
   </body>
 
