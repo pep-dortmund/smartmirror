@@ -47,3 +47,7 @@ h2 {
 td + td {
   padding-left: 1rem;
 }
+
+table img {
+  max-height: 4rem;
+}
