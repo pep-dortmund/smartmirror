@@ -1,8 +1,11 @@
+:root {
+  font-size: 48px;
+}
+
 body {
   font-family: "Fira Sans", sans-serif;
   color: white;
   background-color: black;
-  font-size: 48px;
 }
 
 #clock {
