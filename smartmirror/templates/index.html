@@ -38,18 +38,13 @@
         </table>
       </div>
       <div id="weather">
-        <table>
-          <tr>
-            <th>Stadt</th>
-            <th>Temperatur</th>
-            <th>Wetter</th>
-          </tr>
-          <tr v-for="(w, city, index) in weather">
-            <td>((city))</td>
-            <td>(( w.temperature)) °C</td>
-            <td><img class="weather-icon" v-bind:src="w.icon"></td>
-          </tr>
-        </table>
+        <div v-for="(w, city, index) in weather" class="weather-city">
+          <div class="weather-temperature">
+            ((city))<br>
+            (( w.temperature)) °C
+          </div>
+          <img class="weather-icon" v-bind:src="w.icon">
+        </div>
       </div>
       <div id="news">
         <div v-for="article in news">

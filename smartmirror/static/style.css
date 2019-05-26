@@ -46,7 +46,7 @@ h5 {
 #vrr {
   margin: 15px auto;
   grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
 }
@@ -65,10 +65,10 @@ td + td {
 #weather {
   margin-left: auto;
   margin-right: auto;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 3;
-  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 #news {
@@ -80,4 +80,20 @@ td + td {
 
 .weather-icon {
   height: 4rem;
+  float: right;
+	margin-left: auto;
+}
+.weather-city {
+  width: 100%;
+  overflow: hidden;
+	display: flex;
+  align-items: center;
+}
+
+.weather-temperature {
+	float: left;
+}
+
+.red {
+	color: red;
 }
