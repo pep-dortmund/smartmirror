@@ -1,0 +1,12 @@
+[Unit]
+Description=Flask SmartMirror App
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/smartmirror
+ExecStart=/home/pi/.local/bin/gunicorn -b localhost:5000 smartmirror:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
