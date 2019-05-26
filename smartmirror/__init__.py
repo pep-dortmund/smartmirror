@@ -3,13 +3,16 @@ from openvrr import get_station_departures
 import os
 from dotenv import load_dotenv
 import requests
+from newsapi import NewsApiClient
 
 load_dotenv()
 
 OPENWEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather'
 
+
 app = Flask(__name__)
 app.config['OPENWEATHER_APPID'] = os.environ['OPENWEATHER_APPID']
+app.config['NEWSAPI_APPID'] = os.environ['NEWSAPI_APPID']
 
 @app.route('/')
 def index():
@@ -46,3 +49,9 @@ def weather(city):
         )
     )
     return jsonify(status='succes', weather=weather.json())
+
+@app.route('/news/<publisher>')
+def news(publisher):
+    newsapi = NewsApiClient(api_key=app.config['NEWSAPI_APPID'])
+    top_headlines = newsapi.get_top_headlines(sources=publisher, page_size=2)
+    return jsonify(status='sucess', news=top_headlines)

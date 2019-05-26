@@ -13,14 +13,12 @@
 
   </head>
   <body>
-    <div id="app">
-      <div class="container">
-        <div id="title">
-          <h1>PeP et al. e.&thinsp;V.</h1>
-        </div>
-        <div id="clock">(( time ))</div>
+    <div id="app" class="container">
+      <div id="title">
+        <h1>PeP et al. e.&thinsp;V.</h1>
       </div>
-      <div id="departures">
+      <div id="clock">(( time ))</div>
+      <div id="vrr">
         <table>
           <thead>
             <tr>
@@ -39,18 +37,26 @@
           </tr>
         </table>
       </div>
-      <table>
-        <tr>
-          <th>Stadt</th>
-          <th>Temperatur</th>
-          <th>Wetter</th>
-        </tr>
-        <tr v-for="(w, city, index) in weather">
-          <td>((city))</td>
-          <td>(( w.temperature)) °C</td>
-          <td><img v-bind:src="w.icon"></td>
-        </tr>
-      </table>
+      <div id="weather">
+        <table>
+          <tr>
+            <th>Stadt</th>
+            <th>Temperatur</th>
+            <th>Wetter</th>
+          </tr>
+          <tr v-for="(w, city, index) in weather">
+            <td>((city))</td>
+            <td>(( w.temperature)) °C</td>
+            <td><img v-bind:src="w.icon"></td>
+          </tr>
+        </table>
+      </div>
+      <div id="news">
+        <div v-for="article in news">
+          <h5>((article.title))</h5>
+          <p>((article.description))</p>
+        </div>
+      </div>
     </div>
   </body>
 
