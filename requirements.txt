@@ -3,3 +3,4 @@ https://github.com/maxnoe/pyopenvrr/archive/master.tar.gz
 gunicorn
 python-dotenv
 requests
+newsapi-python
