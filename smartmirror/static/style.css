@@ -9,20 +9,8 @@ body {
   overflow: hidden;
 }
 
-#clock {
-	text-align: right;
-  font-size: 2rem;
-  padding: 0.5rem;
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  margin-left: auto;
-  font-family: "Fira Mono", monospace;
-}
-
 p {
-	margin-top: 0;
+  margin-top: 0;
 }
 
 h1 {
@@ -39,6 +27,13 @@ h5 {
   margin: 0.4rem 0;
 }
 
+
+.main {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 50% 50%;
+}
+
 #title {
   position: grid;
   padding: 0.5rem;
@@ -49,6 +44,23 @@ h5 {
   height: 5rem;
 }
 
+#clock {
+  text-align: right;
+  font-size: 2rem;
+  padding: 0.5rem;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  margin-left: auto;
+  font-family: "Fira Mono", monospace;
+}
+
+td + td {
+  padding-left: 1rem;
+}
+
+
 #vrr {
   margin: 15px auto;
   grid-column-start: 1;
@@ -57,48 +69,44 @@ h5 {
   grid-row-end: 3;
 }
 
-.container {
-  display: grid;
-  grid-template-rows: auto auto auto;
-  grid-template-columns: 50% 25% 25%;
-}
-
-td + td {
-  padding-left: 1rem;
-}
-
-
-#weather {
-  margin-left: auto;
+#news {
   grid-column-start: 2;
-  grid-column-end: 4;
+  grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
 }
 
-#news {
-  grid-column-start: 2;
-  grid-column-end: 4;
+#weather {
+  position: absolute;
+  bottom: 0;
+  left: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: auto;
+  grid-column-start: 1;
+  grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 4;
 }
 
+
 .weather-icon {
   height: 4rem;
   float: right;
-	margin-left: auto;
+  margin-left: auto;
 }
 .weather-city {
-  width: 100%;
   overflow: hidden;
-	display: flex;
+  display: flex;
   align-items: center;
 }
 
 .weather-temperature {
-	float: left;
+  float: left;
 }
 
 .red {
-	color: red;
+  color: red;
 }
