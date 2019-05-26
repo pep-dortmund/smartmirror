@@ -9,6 +9,8 @@ var app = new Vue({
     departures: [],
     cities: ['Dortmund', 'Essen', 'Bochum'],
     weather: {},
+    publisher: 'the-new-york-times',
+    news: [],
   },
   methods: {
     updateTime: function() {
@@ -24,7 +26,7 @@ var app = new Vue({
           this.departures = data['departures'];
         })
     },
-    getWeather(){
+    getWeather() {
       this.cities.forEach((city) => {
         console.log(city);
         axios.get('/weather/'+city)
@@ -35,12 +37,19 @@ var app = new Vue({
             this.weather[city]['icon'] = '/static/images/' + data['weather'][0]['icon'] + '_inv_bw.png';
           })
       });
+    },
+    getNews() {
+    axios.get('/news/'+this.publisher)
+      .then((response) => {
+        this.news = response.data['news']['articles'];
+      })
     }
   },
   created: function() {
     this.updateTime();
     this.getDepartures();
     this.getWeather();
+    this.getNews();
   },
   watch: {
     cities: function (val) {
