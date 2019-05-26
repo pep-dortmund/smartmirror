@@ -5,7 +5,7 @@ var app = new Vue({
   el: '#app',
   delimiters: ['((', '))'],
   data: {
-    time: null,
+    time: moment(),
     departures: [],
     cities: ['Dortmund', 'Essen', 'Bochum'],
     weather: {},
@@ -14,7 +14,7 @@ var app = new Vue({
   },
   methods: {
     updateTime: function() {
-      this.time = moment().format('H:mm:ss');
+      this.time = moment();
     },
     getDepartures() {
       axios.get('/vrr')
@@ -46,7 +46,6 @@ var app = new Vue({
     }
   },
   created: function() {
-    this.updateTime();
     this.getDepartures();
     this.getWeather();
     this.getNews();

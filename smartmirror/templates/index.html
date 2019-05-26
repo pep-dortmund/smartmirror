@@ -5,24 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SmartMirror</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
     <link rel="stylesheet" href="/static/style.css">
     <script defer src="/static/moment.min.js"></script>
+    <script defer src="/static/jquery-3.3.1.slim.min.js"></script>
+    <script defer src="/static/popper.min.js"></script>
+    <script defer src="/static/bootstrap.min.js"></script>
     <script defer src="/static/axios.js"></script>
     <script defer src="/static/vue.js"></script>
     <script defer src="/static/site.js"></script>
-
-    <script src="/static/jquery-3.3.1.slim.min.js"></script>
-    <script src="/static/popper.min.js"></script>
-    <script src="/static/bootstrap.min.js"></script>
 
   </head>
   <body>
     <div id="app" class="container">
       <div id="title">
-        <h1>PeP et al. e.&thinsp;V.</h1>
+        <img height="100%" src="/static/logo_positiv_white.svg" alt=""/>
       </div>
-      <div id="clock">(( time ))</div>
+      <div id="clock">
+        (( time.format('D.M.YYYY') ))<br>
+        (( time.format('HH:mm:ss') ))
+      </div>
       <div id="vrr">
         <table>
           <thead>
@@ -43,18 +45,13 @@
         </table>
       </div>
       <div id="weather">
-        <table>
-          <tr>
-            <th>Stadt</th>
-            <th>Temperatur</th>
-            <th>Wetter</th>
-          </tr>
-          <tr v-for="(w, city, index) in weather">
-            <td>((city))</td>
-            <td>(( w.temperature)) °C</td>
-            <td><img v-bind:src="w.icon"></td>
-          </tr>
-        </table>
+        <div v-for="(w, city, index) in weather" class="weather-city">
+          <div class="weather-temperature">
+            ((city))<br>
+            (( w.temperature)) °C
+          </div>
+          <img class="weather-icon" v-bind:src="w.icon">
+        </div>
       </div>
       <div id="news" class="carousel slide" data-ride="carousel" data-interval="20000">
         <div class="carousel-inner">
