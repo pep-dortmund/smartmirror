@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SmartMirror</title>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/style.css">
     <script defer src="/static/moment.min.js"></script>
     <script defer src="/static/axios.js"></script>
     <script defer src="/static/vue.js"></script>
     <script defer src="/static/site.js"></script>
+
+    <script src="/static/jquery-3.3.1.slim.min.js"></script>
+    <script src="/static/popper.min.js"></script>
+    <script src="/static/bootstrap.min.js"></script>
 
   </head>
   <body>
@@ -51,10 +56,12 @@
           </tr>
         </table>
       </div>
-      <div id="news">
-        <div v-for="article in news">
-          <h5>((article.title))</h5>
-          <p>((article.description))</p>
+      <div id="news" class="carousel slide" data-ride="carousel" data-interval="20000">
+        <div class="carousel-inner">
+          <div class="carousel-item" v-for="(article,index) in news" v-bind:class="{active: index==0}">
+            <h5>(( article.title ))</h5>
+            <p>(( article.description ))</p>
+          </div>
         </div>
       </div>
     </div>

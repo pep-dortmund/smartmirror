@@ -71,11 +71,14 @@ td + td {
   grid-row-end: 4;
 }
 
+
+
 #news {
   grid-column-start: 2;
   grid-column-end: 4;
   grid-row-start: 3;
   grid-row-end: 4;
+}
 
 table img {
   max-height: 4rem;

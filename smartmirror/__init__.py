@@ -53,5 +53,5 @@ def weather(city):
 @app.route('/news/<publisher>')
 def news(publisher):
     newsapi = NewsApiClient(api_key=app.config['NEWSAPI_APPID'])
-    top_headlines = newsapi.get_top_headlines(sources=publisher, page_size=2)
+    top_headlines = newsapi.get_top_headlines(sources=publisher, page_size=8)
     return jsonify(status='sucess', news=top_headlines)
