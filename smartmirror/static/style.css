@@ -10,9 +10,10 @@ body {
 }
 
 #clock {
+	text-align: right;
   font-size: 2rem;
-  padding: 1rem;
-  grid-column-start: 3;
+  padding: 0.5rem;
+  grid-column-start: 2;
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 2;
@@ -40,11 +41,12 @@ h5 {
 
 #title {
   position: grid;
-  padding: 1rem;
+  padding: 0.5rem;
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
+  height: 5rem;
 }
 
 #vrr {
@@ -68,7 +70,6 @@ td + td {
 
 #weather {
   margin-left: auto;
-  margin-right: auto;
   grid-column-start: 2;
   grid-column-end: 4;
   grid-row-start: 2;

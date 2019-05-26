@@ -15,9 +15,12 @@
   <body>
     <div id="app" class="container">
       <div id="title">
-        <h1>PeP et al. e.&thinsp;V.</h1>
+        <img height="100%" src="/static/logo_positiv_white.svg" alt=""/>
       </div>
-      <div id="clock">(( time ))</div>
+      <div id="clock">
+        (( time.format('D.M.YYYY') ))<br>
+        (( time.format('HH:mm:ss') ))
+      </div>
       <div id="vrr">
         <table>
           <thead>
