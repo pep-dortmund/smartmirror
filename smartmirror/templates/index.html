@@ -47,7 +47,7 @@
           <tr v-for="(w, city, index) in weather">
             <td>((city))</td>
             <td>(( w.temperature)) °C</td>
-            <td><img v-bind:src="w.icon"></td>
+            <td><img class="weather-icon" v-bind:src="w.icon"></td>
           </tr>
         </table>
       </div>
