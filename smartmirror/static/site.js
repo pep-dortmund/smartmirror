@@ -9,7 +9,7 @@ var app = new Vue({
     departures: [],
     cities: ['Dortmund', 'Essen', 'Bochum'],
     weather: {},
-    publisher: 'the-new-york-times',
+    publisher: 'die-zeit',
     news: [],
   },
   methods: {
